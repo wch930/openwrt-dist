@@ -1,0 +1,426 @@
+Package: ChinaDNS
+Version: 1.3.3-1
+Depends: libc
+License: GPLv3
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 36592
+Filename: ChinaDNS_1.3.3-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 36190
+SHA256sum: 95a72bbab1ee20cb271128e4c26ee170f66f2b7ebfd281b3e8f82b5b17ccf5eb
+Description:  Protect yourself against DNS poisoning in China.
+
+Package: dns-forwarder
+Version: 1.2.1-2
+Depends: libc
+License: GPLv3
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 8595
+Filename: dns-forwarder_1.2.1-2_arm_cortex-a15_neon-vfpv4.ipk
+Size: 9386
+SHA256sum: 2560d5f37ec5859cc8f1d8353f619541ead5ac1ec9b49462b7b7c5b7aa424db8
+Description:  Forwarding DNS queries on TCP transport.
+
+Package: libmbedtls12
+Version: 2.16.4-1
+Depends: libc
+Provides: libmbedtls
+License: GPL-2.0+
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 164520
+Filename: libmbedtls12_2.16.4-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 165110
+SHA256sum: 53fc61e2584bc0eb19b91291b6ccd7650afe53e960f38b0d70d2ef58b08d1585
+Description:  The aim of the mbedtls project is to provide a quality, open-source
+ cryptographic library written in C and targeted at embedded systems.
+ This package contains the mbedtls library.
+
+Package: libopenssl-conf
+Version: 1.1.1d-2
+Depends: libc, libopenssl1.1
+License: OpenSSL
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 4550
+Filename: libopenssl-conf_1.1.1d-2_arm_cortex-a15_neon-vfpv4.ipk
+Size: 5497
+SHA256sum: daefde92d88e8550496d13ab5882fe6a7b1195eb850e22b0dfce4b8811543802
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package installs the OpenSSL configuration file /etc/ssl/openssl.cnf.
+
+Package: libopenssl-devcrypto
+Version: 1.1.1d-2
+Depends: libc, libopenssl1.1, kmod-cryptodev, libopenssl-conf
+License: OpenSSL
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 7508
+Filename: libopenssl-devcrypto_1.1.1d-2_arm_cortex-a15_neon-vfpv4.ipk
+Size: 8509
+SHA256sum: e5ba407dcf24fa00c4325ce44d75ab4601cb9f4163f2696e8f68e11e3f6dcee2
+Description:  This package adds an engine that enables hardware acceleration
+ through the /dev/crypto kernel interface.
+ To use it, you need to configure the engine in /etc/ssl/openssl.cnf
+ See https://www.openssl.org/docs/man1.1.1/man5/config.html#Engine-Configuration-Module
+ and https://openwrt.org/docs/techref/hardware/cryptographic.hardware.accelerators
+ The engine_id is "devcrypto"
+
+Package: libopenssl1.1
+Version: 1.1.1d-2
+Depends: libc
+Provides: libopenssl
+License: OpenSSL
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 1097707
+Filename: libopenssl1.1_1.1.1d-2_arm_cortex-a15_neon-vfpv4.ipk
+Size: 1087474
+SHA256sum: 03816cc3a562ae0a3c52b41f837de8ed5027290ccfd4f47f655eb483a229a1b6
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL shared libraries, needed by other programs.
+
+Package: luci-app-chinadns
+Version: 1.6.2-1
+Depends: libc, ChinaDNS
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 1643
+Filename: luci-app-chinadns_1.6.2-1_all.ipk
+Size: 2531
+SHA256sum: a6393ba9f3a8929cb93652e3aeacbdc83fa977b4c63bff50ae6d1aecaa4b0a14
+Description:  LuCI Support for ChinaDNS.
+
+Package: luci-app-dns-forwarder
+Version: 1.6.2-1
+Depends: libc, dns-forwarder
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 1350
+Filename: luci-app-dns-forwarder_1.6.2-1_all.ipk
+Size: 2247
+SHA256sum: 5df9e74fc5ba71924ff7243c9349b55f9f4ad4649f1a214aeb087ac9df30dc9c
+Description:  LuCI Support for Dns-Forwarder.
+
+Package: luci-app-openclash
+Version: 0.38.1-beta
+Depends: libc, iptables, dnsmasq-full, coreutils, coreutils-nohup, bash, curl, jsonfilter, ca-certificates, ipset, ip-full, iptables-mod-tproxy
+Section: opt
+Architecture: all
+Installed-Size: 2615648
+Filename: luci-app-openclash_0.38.1-beta_all.ipk
+Size: 2436175
+SHA256sum: cc98f96a4c9d7d725d34dbff5998e2ddeb1b2bb852030479f4809b6625afaf6e
+Description:  A LuCI support for clash
+
+Package: luci-app-redsocks2
+Version: 1.6.2-1
+Depends: libc, redsocks2
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 1528
+Filename: luci-app-redsocks2_1.6.2-1_all.ipk
+Size: 2410
+SHA256sum: f86ea7806a5086e923901172325c24ae6f0d2d08655f785337d845d1b9cfa612
+Description:  LuCI Support for RedSocks2.
+
+Package: luci-app-shadowsocks-without-ipset
+Version: 1.9.1-1
+Depends: libc, iptables
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 10294
+Filename: luci-app-shadowsocks-without-ipset_1.9.1-1_all.ipk
+Size: 11225
+SHA256sum: f8caa8d6778a2bd87571818e441a287bacd7bf0046281fda96d7c1872acbaf54
+Description:  LuCI Support for shadowsocks-libev.
+
+Package: luci-app-shadowsocks
+Version: 1.9.1-1
+Depends: libc, iptables, ipset
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 10416
+Filename: luci-app-shadowsocks_1.9.1-1_all.ipk
+Size: 11336
+SHA256sum: 9fd92967b94c2912db23c92613df04280d2def34ddeab5de496dbcde72f6149d
+Description:  LuCI Support for shadowsocks-libev.
+
+Package: luci-app-shadowvpn
+Version: 1.6.2-1
+Depends: libc, ShadowVPN
+License: GPLv3
+Section: luci
+Architecture: all
+Installed-Size: 1805
+Filename: luci-app-shadowvpn_1.6.2-1_all.ipk
+Size: 2691
+SHA256sum: f2a4bb05d255b642a781db5fc85bdd0fc9fba4a4956e73e74cb2dd76327f2eeb
+Description:  LuCI Support for ShadowVPN.
+
+Package: luci-app-smartdns-compat
+Version: 1.2019.28-1
+Depends: libc, luci-compat, smartdns
+License: GPL-3.0-or-later
+Section: luci
+Architecture: all
+Installed-Size: 5368
+Filename: luci-app-smartdns-compat_1.2019.28-1_all.ipk
+Size: 6152
+SHA256sum: 5749902c0cc3beb35dc6d2b06094f9f84f90e93f2cb6b42a70ee6c6230bc65bd
+Description:  Provides Luci for smartdns
+
+Package: luci-app-smartdns
+Version: 1.2019.28-1
+Depends: libc, luci-base, smartdns
+License: GPL-3.0-or-later
+Section: luci
+Architecture: all
+Installed-Size: 5189
+Filename: luci-app-smartdns_1.2019.28-1_all.ipk
+Size: 5992
+SHA256sum: a2130d37d1614516fd0ca793f2c0d4618accd4bb646a7e217e78d609bd5a0c6b
+Description:  Provides Luci for smartdns
+
+Package: luci-app-v2ray
+Version: 1.5.6-1
+Depends: libc, jshn, luci-lib-jsonc, ip, ipset, iptables, iptables-mod-tproxy, resolveip, dnsmasq-full
+License: MIT
+Section: luci
+Architecture: all
+Installed-Size: 85644
+Filename: luci-app-v2ray_1.5.6-1_all.ipk
+Size: 85572
+SHA256sum: a3eeec89d2f96e1c7e8ac0dc781aaa365bd7c2018a6627dcdb8a08df62aa86ba
+Description:  LuCI support for V2Ray
+
+Package: luci-app-vlmcsd
+Version: 1.0.1-1
+Depends: libc, vlmcsd
+License: MIT
+Section: luci
+Architecture: all
+Installed-Size: 1628
+Filename: luci-app-vlmcsd_1.0.1-1_all.ipk
+Size: 2475
+SHA256sum: ee1cee13a6dd5f4e4864886ddef413c0a8a2000842083ca2cc66c67005d60e7f
+Description:  This package contains LuCI configuration pages for openwrt-vlmcsd.
+
+Package: luci-i18n-smartdns-compat-zh-cn
+Version: 1.2019.28-1
+Depends: libc, luci-app-smartdns-compat
+License: GPL-3.0-or-later
+Section: luci
+Architecture: all
+Installed-Size: 3117
+Filename: luci-i18n-smartdns-compat-zh-cn_1.2019.28-1_all.ipk
+Size: 3926
+SHA256sum: 09da332adf886378aa5dce8c6938dd79081f5310f763d90ecb06be20f65bad75
+Description:  Translation for luci-app-smartdns-compat - 中文 (Chinese)
+
+Package: luci-i18n-smartdns-zh-cn
+Version: 1.2019.28-1
+Depends: libc, luci-app-smartdns
+License: GPL-3.0-or-later
+Section: luci
+Architecture: all
+Installed-Size: 3198
+Filename: luci-i18n-smartdns-zh-cn_1.2019.28-1_all.ipk
+Size: 4016
+SHA256sum: edf9b4e37e5f2092d09ff07b48b6c4ef61f8a90c0ed095eb02255e119ca939ed
+Description:  Translation for luci-app-smartdns - 中文 (Chinese)
+
+Package: luci-i18n-v2ray-zh-cn
+Version: 1.5.6-1
+Depends: libc, luci-app-v2ray
+License: MIT
+Section: luci
+Architecture: all
+Installed-Size: 6119
+Filename: luci-i18n-v2ray-zh-cn_1.5.6-1_all.ipk
+Size: 6926
+SHA256sum: 8c69844dd52e4084d5cd6e74bbf378f7d1645c114506cc944b9602fd57e75157
+Description:  Translation for luci-app-v2ray - 中文 (Chinese)
+
+Package: mbedtls-util
+Version: 2.16.4-1
+Depends: libc, libmbedtls12
+License: GPL-2.0+
+Section: utils
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 7255
+Filename: mbedtls-util_2.16.4-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 8090
+SHA256sum: bc4d93c232704da9e05d17bf6f04a87aa1e49a4923d3ad43e805b2b20a6b65ad
+Description:  The aim of the mbedtls project is to provide a quality, open-source
+ cryptographic library written in C and targeted at embedded systems.
+ This package contains mbedtls helper programs for private key and
+ CSR generation (gen_key, cert_req)
+
+Package: openssl-util
+Version: 1.1.1d-2
+Depends: libc, libopenssl1.1, libopenssl-conf
+License: OpenSSL
+Section: utils
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 247621
+Filename: openssl-util_1.1.1d-2_arm_cortex-a15_neon-vfpv4.ipk
+Size: 245967
+SHA256sum: 937d4c9baa70aebe452dca595cb56e286b5b2f29da880196d8d46bcc9002a70e
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL command-line utility.
+
+Package: shadowsocks-libev-server
+Version: 3.3.4-1
+Depends: libc, libpthread, libev, libpcre, libcares, libsodium, libmbedtls12
+License: GPLv3
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 61832
+Filename: shadowsocks-libev-server_3.3.4-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 62693
+SHA256sum: 2dd3c50bc94d054bc189956106d92860cbb5a28bfb98cc7d639985f119152b71
+Description:  Shadowsocks-libev is a lightweight secured socks5 proxy for embedded devices and low end boxes.
+
+Package: shadowsocks-libev
+Version: 3.3.4-1
+Depends: libc, libpthread, libev, libpcre, libcares, libsodium, libmbedtls12
+License: GPLv3
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 159763
+Filename: shadowsocks-libev_3.3.4-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 160274
+SHA256sum: 9746fe92e2e1f95571528c9503e019163c6b8917610297d6122771aaacf138f1
+Description:  Shadowsocks-libev is a lightweight secured socks5 proxy for embedded devices and low end boxes.
+
+Package: simple-obfs-server
+Version: 0.0.5-5
+Depends: libc, libpthread, libev
+License: GPLv3
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 29572
+Filename: simple-obfs-server_0.0.5-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 30344
+SHA256sum: 77d4b65c6da5bdf307bec1b1bb474ef99cf0d599658a2cef5b017afd678af5e6
+Description:  Simple-obfs is a simple obfusacting tool, designed as plugin server of shadowsocks.
+
+Package: simple-obfs
+Version: 0.0.5-5
+Depends: libc, libpthread, libev
+License: GPLv3
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 27180
+Filename: simple-obfs_0.0.5-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 27994
+SHA256sum: 4d7029135361a9e64a7bd38e65e07f225097c6efb4273effb9029b4041243f1d
+Description:  Simple-obfs is a simple obfusacting tool, designed as plugin server of shadowsocks.
+
+Package: smartdns
+Version: 1.2020.28-1
+Depends: libc, libpthread, libopenssl1.1
+License: GPL-3.0-or-later
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 72246
+Filename: smartdns_1.2020.28-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 73155
+SHA256sum: 172e1f9d23523078a4b544259e60023c6d8d0868c2662528db1d24b495f85dc1
+Description:  SmartDNS is a local DNS server which accepts DNS query requests from local network clients,
+ get DNS query results from multiple upstream DNS servers concurrently, and returns the fastest IP to clients.
+ Unlike dnsmasq's all-servers, smartdns returns the fastest IP. 
+
+Package: uclibcxx
+Version: 0.2.5-3
+Depends: libc
+License: LGPL-2.1-or-later
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 59417
+Filename: uclibcxx_0.2.5-3_arm_cortex-a15_neon-vfpv4.ipk
+Size: 59907
+SHA256sum: 89f8f1cc14b74a211edb179118481ffcddae673ecaa24b2f6408e2644cc19fe2
+Description:  C++ library for embedded systems
+
+Package: v2ray-core
+Version: 4.23.1-5
+Depends: libc, ca-certificates
+License: MIT
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 13294322
+Filename: v2ray-core_4.23.1-5_arm_cortex-a15_neon-vfpv4.ipk
+Size: 13208881
+SHA256sum: 9cdaa34247233104b12cd88e48415f3f5d3a65108139ec0e7ff1b02d4d8c7d10
+Description:  Project V is a set of network tools that help you to build your own computer network.
+ It secures your network connections and thus protects your privacy.
+ 
+ This package contains v2ray, v2ctl and v2ray-assets.
+
+Package: v2ray-plugin
+Version: 1.2.0-2
+Depends: libc
+License: MIT
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 3906663
+Filename: v2ray-plugin_1.2.0-2_arm_cortex-a15_neon-vfpv4.ipk
+Size: 3901485
+SHA256sum: 08cd196db7dafc2c756b9d8b2a77d6e15ace0528df9fd8faf273b3ee57610180
+Description:  Yet another SIP003 plugin for shadowsocks, based on v2ray
+
+Package: vlmcsd
+Version: svn1112-1
+Depends: libc, libpthread
+License: MIT
+Section: net
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 53518
+Filename: vlmcsd_svn1112-1_arm_cortex-a15_neon-vfpv4.ipk
+Size: 54148
+SHA256sum: 5f2e52fb1a2138bcde17bbe1838dafcf6aa622b8076157df3850ee337c7aef26
+Description:  vlmcsd is a KMS Emulator in C.
+
+Package: zlib-dev
+Version: 1.2.11-3
+Depends: libc, zlib
+License: Zlib
+Section: devel
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 77214
+Filename: zlib-dev_1.2.11-3_arm_cortex-a15_neon-vfpv4.ipk
+Size: 77964
+SHA256sum: d03136eee45d5e78df4ac5aceae3067e00f12f8b2dffa2427f0c5ddc7d115922
+Description:  zlib is a lossless data-compression library.
+ This package includes the development support files.
+
+Package: zlib
+Version: 1.2.11-3
+Depends: libc
+License: Zlib
+Section: libs
+Architecture: arm_cortex-a15_neon-vfpv4
+Installed-Size: 41234
+Filename: zlib_1.2.11-3_arm_cortex-a15_neon-vfpv4.ipk
+Size: 42003
+SHA256sum: 8ddd98d7d394ff01130ac6b4e9a52b18a9c4551f7f0a0dd2cc9f055fa7028c19
+Description:  zlib is a lossless data-compression library.
+ This package includes the shared library.
+
